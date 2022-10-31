@@ -14,7 +14,7 @@ E, por fim, se digitar qualquer outro número, aparecerá uma mensagem dizendo q
 
 Como solicitado, segue abaixo os prints da minha base de dados:
 
-https://drive.google.com/file/d/1JNQe3tkKfplnDghu9YgelRlSk4XXNkw_/view?usp=share_link
+https://drive.google.com/drive/folders/11bYbG4q1HmnkS8gTFVC2kSgA6tVlkEkZ?usp=share_link
 
 Print 1: Base de dados vazia (início do programa);
 Print 2: Base de dados após inserção (opção 1);
@@ -24,16 +24,15 @@ Print 4: Base de dados após a remoção do produto 2 (opção 3);
 Questão 2:
 
 O usuário deverá rodar o programa e escolher quantos filmes ele quer filtrar e a página que quer selecionar;
-
 O programa mostrará no console os filmes listados na página escolhida;
 
 Print da base de dados:
-https://drive.google.com/file/d/1KI7QebGq1O4xmAy5bgh5URORaDUhhPC7/view?usp=share_link
+
+https://drive.google.com/drive/folders/1qsJ_2Yt_NpRbLKVSsTBMiIYuUeX9gFzI?usp=share_link
 
 Questão 3:
 
 O usuário deverá rodar o programa e escrever a mensagem que quiser no console;
-
 O programa irá devolver o "humor" do usuário baseado na quantidade de emotes que o usuário digitou na mensagem;
 
 
