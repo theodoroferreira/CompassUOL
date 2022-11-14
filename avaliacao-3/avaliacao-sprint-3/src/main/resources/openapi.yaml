@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: Avaliação Sprint 3
+  description: Documentação de uma API REST
+  version: 0.0.1
+  contact:
+    name: Theodoro Gaspar Ferreira
+    email: theodoro.ferreira.pb@compasso.com.br
+    url: https://github.com/theodoroferreira
+  license:
+    name: "Licença: GPLv3"
+    url: https://www.gnu.org/licenses/gpl-3.0.html
+externalDocs:
+  description: Avaliação Sprint 3 - GitHub
+  url: https://github.com/theodoroferreira/CompassUOL/tree/main/avaliacao-3/avaliacao-sprint-3
+servers:
+- url: http://localhost:8080
+  description: Local Host
+paths:
+  /api/states:
+    post:
+      summary: Cria um novo estado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Estado"
+      responses:
+        200:
+          description: "Sucesso"
+    get:
+      summary: Recupera todos os Estados
+      responses:
+        '200':
+          $ref: "#/components/responses/SucessoListagem"
+  /api/states/{id}:
+    parameters:
+    - name: id
+      in: path
+      schema:
+        type: integer
+      required: true
+    get:
+      summary: Recupera um Estado específico pelo id
+      responses:
+        "200":
+          $ref: "#/components/responses/Sucesso"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    put:
+      summary: Atualiza um Estado específico pelo id
+      responses:
+        "200":
+          $ref: "#/components/responses/Sucesso"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Remove um Estado específico pelo id
+      responses:
+        "200":
+          $ref: "#/components/responses/Sucesso"
+        "404":
+          $ref: "#/components/responses/NotFound"
+security:
+- auth: []
+
+components:
+  schemas:
+    Estado:
+      type: object
+      properties:
+        id:
+          type: integer
+        nome:
+          type: string
+        regiao:
+          type: string
+          enum:
+          - NORTE
+          - NORDESTE
+          - SUL 
+          - SUDESTE
+          - CENTRO_OESTE
+        populacao:
+          type: integer
+        capital:
+          type: string
+        area:
+          type: number
+          format: decimal
+    ListagemEstado:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Estado"
+  responses:    
+    Sucesso:
+      description: Sucesso
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/components/schemas/Estado'
+    SucessoListagem:
+      description: Sucesso
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/components/schemas/ListagemEstado'          
+    NotFound:
+      description: Id requisitado não foi encontrado
+      content:
+        application/json:
+          example: Not Found
+  securitySchemes:
+    auth:
+      type: http
+      scheme: basic
